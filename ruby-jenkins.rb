@@ -8,7 +8,7 @@ describe 'Testing Applitools' do
     #@eyes.force_full_page_screenshot = true
     #@eyes.stitch_mode = :css
     
-    batch_info = Applitools::BatchInfo.new(nil)
+    batch_info = Applitools::BatchInfo.new("TEST")
     batch_info.id = ENV['APPLITOOLS_BATCH_ID']
     @eyes.batch = batch_info
     
