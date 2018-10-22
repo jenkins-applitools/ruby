@@ -8,8 +8,8 @@ describe 'Testing Applitools' do
     #@eyes.force_full_page_screenshot = true
     #@eyes.stitch_mode = :css
     
-    @eyes.branch_name = 'jenkins-applitools/ruby/test2'
-    @eyes.parent_branch_name = 'jenkins-applitools/ruby/master'
+    # @eyes.branch_name = 'jenkins-applitools/ruby/test2'
+    # @eyes.parent_branch_name = 'jenkins-applitools/ruby/master'
     
     batch_info = Applitools::BatchInfo.new("MY BATCH")
     batch_info.id = ENV['APPLITOOLS_BATCH_ID']
