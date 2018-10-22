@@ -8,8 +8,8 @@ describe 'Testing Applitools' do
     @eyes.force_full_page_screenshot = true
     @eyes.stitch_mode = :css
     
-    @eyes.branch_name = 'jenkins-applitools/ruby/spain'
-    #@eyes.parent_branch_name = 'jenkins-applitools/ruby/master'
+    @eyes.branch_name = 'jenkins-applitools/ruby/test2'
+    @eyes.parent_branch_name = 'jenkins-applitools/ruby/master'
     
     batch_info = Applitools::BatchInfo.new("ci/jenkins")
     batch_info.id = ENV['APPLITOOLS_BATCH_ID']
@@ -32,7 +32,7 @@ describe 'Testing Applitools' do
   it 'Applitools Test' do |e|
     @eyes.open(driver: @driver, app_name: "Branch Testing", test_name: e.full_description, viewport_size: {width: 1050, height: 750})
     @driver.get 'https://google.it'
-    @eyes.check_window 'Google Italy 7'
+    @eyes.check_window 'Google Italy 8'
     results = @eyes.close(false)
     #expect(results).not_to be_nil
     expect(results.passed?).to eq true
