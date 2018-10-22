@@ -5,15 +5,16 @@ describe 'Testing Applitools' do
   before(:all) do
     @eyes = Applitools::Selenium::Eyes.new
     @eyes.api_key = ENV['APPLITOOLS_API_KEY']
-    @eyes.force_full_page_screenshot = true
-    @eyes.stitch_mode = :css
+    #@eyes.force_full_page_screenshot = true
+    #@eyes.stitch_mode = :css
     
-    @eyes.branch_name = 'jenkins-applitools/ruby/test2'
-    @eyes.parent_branch_name = 'jenkins-applitools/ruby/master'
+    # @eyes.branch_name = 'jenkins-applitools/ruby/test2'
+    # @eyes.parent_branch_name = 'jenkins-applitools/ruby/master'
     
-    batch_info = Applitools::BatchInfo.new("ci/jenkins")
+    batch_info = Applitools::BatchInfo.new(nil)
     batch_info.id = ENV['APPLITOOLS_BATCH_ID']
     @eyes.batch = batch_info
+    
     
     caps = Selenium::WebDriver::Remote::Capabilities.chrome()
     caps['platform'] = 'Windows 7'
