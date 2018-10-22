@@ -31,7 +31,7 @@ describe 'Testing Applitools' do
 
   it 'Applitools Test' do |e|
     @eyes.open(driver: @driver, app_name: "Branch Testing", test_name: e.full_description, viewport_size: {width: 1050, height: 750})
-    @driver.get 'https://google.es'
+    @driver.get 'https://google.fr'
     @eyes.check_window 'Google Spain 4'
     results = @eyes.close(false)
     expect(results.passed?).to eq true
