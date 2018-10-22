@@ -11,7 +11,7 @@ describe 'Testing Applitools' do
     # @eyes.branch_name = 'jenkins-applitools/ruby/test2'
     # @eyes.parent_branch_name = 'jenkins-applitools/ruby/master'
     
-    batch_info = Applitools::BatchInfo.new(nil)
+    batch_info = Applitools::BatchInfo.new("test")
     batch_info.id = ENV['APPLITOOLS_BATCH_ID']
     @eyes.batch = batch_info
     
