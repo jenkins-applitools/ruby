@@ -11,7 +11,7 @@ describe 'Testing Applitools' do
     batch_info = Applitools::BatchInfo.new(nil)
     batch_info.id = ENV['APPLITOOLS_BATCH_ID']
     @eyes.batch = batch_info
-    ENV['APPLITOOLS_BATCH_NAME'] = "TEST"
+    ENV['APPLITOOLS_BATCH_NAME'] = "RubyCI"
     
     caps = Selenium::WebDriver::Remote::Capabilities.chrome()
     caps['platform'] = 'Windows 7'
