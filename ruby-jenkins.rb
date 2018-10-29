@@ -31,6 +31,7 @@ describe 'Testing Applitools' do
     @driver.get 'https://google.it'
     @eyes.check_window 'Google Italy 12'
     results = @eyes.close(false)
+    
     #expect(results).not_to be_nil
     expect(results.passed?).to eq true
   end
