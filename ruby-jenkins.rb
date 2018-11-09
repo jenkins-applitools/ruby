@@ -8,6 +8,8 @@ describe 'Testing Applitools' do
     #@eyes.force_full_page_screenshot = true
     #@eyes.stitch_mode = :css
     
+    @eyes.parent_branch_name = 'default'
+    
     batch_info = Applitools::BatchInfo.new(nil)
     batch_info.id = ENV['APPLITOOLS_BATCH_ID']
     @eyes.batch = batch_info
@@ -28,8 +30,8 @@ describe 'Testing Applitools' do
 
   it 'Applitools Test' do |e|
     @eyes.open(driver: @driver, app_name: "Branch Testing", test_name: e.full_description, viewport_size: {width: 1050, height: 750})
-    @driver.get 'https://google.com'
-    @eyes.check_window 'Google'
+    @driver.get 'https://google.de'
+    @eyes.check_window 'Google Germany'
     results = @eyes.close(false)
     
     
