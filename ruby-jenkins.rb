@@ -28,8 +28,8 @@ describe 'Testing Applitools' do
 
   it 'Applitools Test' do |e|
     @eyes.open(driver: @driver, app_name: "Branch Testing", test_name: e.full_description, viewport_size: {width: 1050, height: 750})
-    @driver.get 'https://google.es'
-    @eyes.check_window 'Google Spain'
+    @driver.get 'https://google.de'
+    @eyes.check_window 'Google Germany'
     @eyes.check_region(:id, 'body', tag: 'IMAGE', stitch_content: true, timeout: 10)
     results = @eyes.close(false)
   
