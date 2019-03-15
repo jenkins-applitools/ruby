@@ -33,7 +33,7 @@ describe 'Testing Applitools' do
     #@eyes.check_region(:id, 'body', tag: 'IMAGE', stitch_content: true, timeout: 10)
     
     results = @eyes.close(false)
-    expect(results).not_to be_nil
+    #expect(results).not_to be_nil
     expect(results.passed?).to eq true
   end
 end
