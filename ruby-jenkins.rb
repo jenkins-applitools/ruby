@@ -27,10 +27,10 @@ describe 'Testing Applitools' do
   end
 
   it 'Applitools Test' do |e|
-    @eyes.open(driver: @driver, app_name: "Branch Testing", test_name: e.full_description, viewport_size: {width: 1050, height: 750})
-    @driver.get 'https://bing.com'
-    @eyes.check_window 'Bing'
-    @eyes.check_region(:id, 'body', tag: 'IMAGE', stitch_content: true, timeout: 10)
+    @eyes.open(driver: @driver, app_name: "Branch Testing Search Engines", test_name: e.full_description, viewport_size: {width: 1050, height: 750})
+    @driver.get 'https://duckduckgo.com'
+    @eyes.check_window 'ddg'
+    #@eyes.check_region(:id, 'body', tag: 'IMAGE', stitch_content: true, timeout: 10)
     
     results = @eyes.close(false)
     expect(results).not_to be_nil
