@@ -21,7 +21,7 @@ describe 'Testing Applitools' do
     @driver = Selenium::WebDriver.for(:remote, url: "https://#{sauce_user}:#{sauce_key}@ondemand.saucelabs.com:443/wd/hub", desired_capabilities: caps)
   end
   
-  after(:all) do
+  after(:each) do
     @eyes.abort_if_not_closed
     @driver.quit
   end
@@ -31,8 +31,8 @@ describe 'Testing Applitools' do
     @driver.get 'https://bing.com'
     @eyes.check_window 'Bing'
     @eyes.check_region(:id, 'body', tag: 'IMAGE', stitch_content: true, timeout: 10)
+    
     results = @eyes.close(false)
-  
     expect(results).not_to be_nil
     expect(results.passed?).to eq true
   end
