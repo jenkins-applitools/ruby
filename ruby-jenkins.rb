@@ -28,12 +28,12 @@ describe 'Testing Applitools' do
 
   it 'Applitools Test' do |e|
     @eyes.open(driver: @driver, app_name: "Branch Testing Search Engines", test_name: e.full_description, viewport_size: {width: 1050, height: 750})
-    @driver.get 'https://bing.com'
-    @eyes.check_window 'bing'
+    @driver.get 'https://duckduckgo.com'
+    @eyes.check_window 'duckduckgo'
     #@eyes.check_region(:id, 'body', tag: 'IMAGE', stitch_content: true, timeout: 10)
     
     results = @eyes.close(false)
-    expect(results).not_to be_nil
+    #expect(results).not_to be_nil
     expect(results.passed?).to eq true
   end
 end
